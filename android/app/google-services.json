@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "821123745761",
+    "firebase_url": "https://nenudemy.firebaseio.com",
+    "project_id": "nenudemy",
+    "storage_bucket": "nenudemy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821123745761:android:583ae6acd4d0e22771f4a0",
+        "android_client_info": {
+          "package_name": "com.judqueu.nenudamye"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821123745761-4rnf02j8pesabt5sndliokjetubmvie9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkDTVMgYnLx4wKfEX1gp-IT1Tq5fj9Y-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821123745761-4rnf02j8pesabt5sndliokjetubmvie9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
