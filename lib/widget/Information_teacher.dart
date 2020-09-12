@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -88,7 +89,16 @@ class _InformationTeacherState extends State<InformationTeacher> {
       margin: EdgeInsets.only(top: 16, bottom: 16),
       width: 180,
       height: 180,
-      child: Image.asset('images/teacher.png'),
+      child: model.pathImage == null
+          ? Image.asset('images/teacher.png')
+          : CachedNetworkImage(
+              imageUrl: model.pathImage,
+              placeholder: (context, url) => Center(
+                child: CircularProgressIndicator(),
+              ),
+              errorWidget: (context, url, error) =>
+                  Image.asset('images/teacher.png'),
+            ),
     );
   }
 
@@ -99,14 +109,14 @@ class _InformationTeacherState extends State<InformationTeacher> {
         print('uid on information teacher ==>> $uid');
         await FirebaseFirestore.instance
             .collection('Type')
-            .document(uid)
+            .doc(uid)
             .snapshots()
             .listen((event) {
-          print('even ===>> ${event.data()}');
+          // print('even ===>> ${event.data()}');
           setState(() {
             model = TypeModel.fromJson(event.data());
-            print('name =${model.name}');
-            print('pathImage =${model.pathImage}');
+            // print('name =${model.name}');
+            // print('pathImage =${model.pathImage}');
           });
         });
       });
