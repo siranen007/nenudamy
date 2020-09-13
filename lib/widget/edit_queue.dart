@@ -7,12 +7,15 @@ import 'package:nenudamye/models/dateday_model.dart';
 import 'package:nenudamye/utility/my_style.dart';
 import 'package:nenudamye/utility/normal_dialog.dart';
 
-class AddQueue extends StatefulWidget {
+class EditQueue extends StatefulWidget {
+  final DateDayModel dateDayModel;
+  EditQueue({Key key, this.dateDayModel}) : super(key: key);
+  
   @override
-  _AddQueueState createState() => _AddQueueState();
+  _EditQueueState createState() => _EditQueueState();
 }
 
-class _AddQueueState extends State<AddQueue> {
+class _EditQueueState extends State<EditQueue> {
   String chooseDate = 'Please Choose Date';
   String chooseStart = 'Please choose Start Hour';
   String chooseEnd = 'Please choose End Hour';
@@ -21,7 +24,7 @@ class _AddQueueState extends State<AddQueue> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Queue'),
+        title: Text('Edit Queue'),
         backgroundColor: MyStyle().primaryColor,
       ),
       body: Stack(
